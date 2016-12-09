@@ -3,9 +3,10 @@ import gdal, gdalconst
 from scipy.cluster.vq import *
 from scipy.misc import imsave
 import matplotlib.pyplot as plt
+from sklearn.cluster import DBSCAN
 
 # Input raster location
-input_raster="dnn.tif"
+input_raster="raster.tif"
 
 # Opening GDAL supported raster datastore
 input_dataset = gdal.Open(input_raster, gdal.GA_ReadOnly)
