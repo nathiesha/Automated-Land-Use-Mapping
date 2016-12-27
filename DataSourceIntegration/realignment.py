@@ -275,7 +275,7 @@ for (i, segVal) in enumerate(np.unique(segments)):
                             for x in xrange(img.size[0]):
                                 if pixdata[x, y] != (0,0,0,255):
                                     #pixdata[x, y] = (9, 249, 235, 0)
-                                    pixdata[x, y] = (0, 0, 255, 0)
+                                    pixdata[x, y] = (0, 255, 255, 0)
 
                     if (type == 'Professional'):
                         ##light blue
@@ -467,8 +467,7 @@ for (m,n) in enumerate(low_set):
                     for x in xrange(img.size[0]):
                         if pixdata[x, y] != (0, 0, 0, 255):
                             # pixdata[x, y] = (9, 249, 235, 0)
-                            pixdata[x, y] = (0, 0, 255, 0)
-                            print 'tran'
+                            pixdata[x, y] = (0, 255, 255, 0)
 
             if (type == 'Professional'):
                 ##light blue
@@ -514,7 +513,7 @@ for (m,n) in enumerate(low_set):
                     for x in xrange(img.size[0]):
                         if pixdata[x, y] != (0, 0, 0, 255):
                             pixdata[x, y] = (0, 0, 255, 0)
-                            print 'commer'
+
 
             if (type == 'Education'):
                 ###blue

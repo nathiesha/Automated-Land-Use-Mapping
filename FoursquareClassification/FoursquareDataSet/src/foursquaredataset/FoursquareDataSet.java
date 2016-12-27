@@ -56,7 +56,7 @@ public class FoursquareDataSet {
                                 else
                                 {
                                     //U Can Handel Boolean, Formula, Errors
-                                    System.out.println("FFUUCCKK   ");
+
                                    
                                 }
                     }
