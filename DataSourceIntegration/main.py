@@ -22,17 +22,17 @@ til = Image.new("RGB",(300, 288))
 til.save('PILImage.jpg')
 
 # load the image
-image = cv2.imread('original.jpg', cv2.IMREAD_COLOR)
+image = cv2.imread('original0.jpg', cv2.IMREAD_COLOR)
 
 #green boundary
 # define the list of boundaries
-# boundaries = [
-# 	([100, 200, 100], [150, 255, 150])
-# ]
+boundaries = [
+	([100, 200, 100], [150, 255, 150])
+]
 
 #red boundary
 # define the list of boundaries
-boundaries = [([0, 0, 100], [30, 30, 180])]
+#boundaries = [([0, 0, 100], [30, 30, 180])]
 
 # loop over the boundaries
 for (lower, upper) in boundaries:
@@ -107,8 +107,8 @@ for (i, segVal) in enumerate(np.unique(segments)):
         print i
 
         image_mask=cv2.bitwise_or(image, image, mask = mask)
-        cv2.imshow("Applied", image_mask)
-        cv2.waitKey(0)
+        # cv2.imshow("Applied", image_mask)
+        # cv2.waitKey(0)
         cv2.imwrite('segment.png',image_mask)
         im = Image.open('segment.png')
         width,height= im.size
@@ -181,11 +181,12 @@ for (i, segVal) in enumerate(np.unique(segments)):
 
                                 if(row[7]=='Recreation'):
                                     ##purple
+                                    ###orange
                                     for y in xrange(img.size[1]):
                                         for x in xrange(img.size[0]):
                                             if pixdata[x, y] != (0,0,0,255):
                                                 #pixdata[x, y] = (163, 6, 255, 0)
-                                                pixdata[x, y] = (0, 255, 255, 0)
+                                                pixdata[x, y] = (0, 165, 25, 0)
 
                                 if(row[7]=='Hotels & Restaurants'):
                                     ##light green

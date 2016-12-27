@@ -20,17 +20,17 @@ x_high=79.90392199622684
 
 
 # load the image
-image = cv2.imread('original.jpg', cv2.IMREAD_COLOR)
+image = cv2.imread('original0.jpg', cv2.IMREAD_COLOR)
 
 #green boundary
 # define the list of boundaries
-# boundaries = [
-# 	([100, 200, 100], [150, 255, 150])
-# ]
+boundaries = [
+	([100, 200, 100], [150, 255, 150])
+]
 
 #red boundary
 # define the list of boundaries
-boundaries = [([0, 0, 100], [30, 30, 180])]
+#boundaries = [([0, 0, 100], [30, 30, 180])]
 
 # loop over the boundaries
 for (lower, upper) in boundaries:
@@ -91,7 +91,7 @@ counter_red = 0
 lower_blue = np.array([110, 50, 50])
 result=[]
 
-imo = Image.open('original.jpg')
+imo = Image.open('original0.jpg')
 widtho, heighto = imo.size
 
 til = Image.new("RGB",(widtho, heighto))
@@ -327,6 +327,9 @@ for i in range (0,overlap):
 
     cv2.imwrite('PILImage.jpg', img1)
 
+plotIm=plt.imread('PILImage.jpg')
+plt.imshow( np.hstack([plotIm]))
+plt.show()
 cv2.imshow('Final visualization', img1)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
